@@ -12,10 +12,10 @@
         <br />
         <table class="table">
             <tbody>
-                <tr repeat.for="todo of todos">
+                <tr repeat.for="todo of todos" click.trigger="todo.done = !todo.done">
                     <td style="width:20px;"><input type="checkbox" checked.bind="todo.done" /></td>
                     <td>
-                        <span css="text-decoration: ${todo.done ? 'line-through' : 'none'}">${todo.description}</span>
+                        <span css="text-decoration: ${todo.done ? 'line-through' : 'none'}" contenteditable="true">${todo.description}</span>
                         <span class="glyphicon glyphicon-remove-circle" style="cursor: pointer;" aria-hidden="true" click.trigger="removeTodo(todo)"></span>
                     </td>
                 </tr>
